@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <style>
+        @media only screen and (max-width: 1000px) {
+
+                .col-sm-3 {
+                    float: left;
+                    width: 100%;
+                    display: inline-block;
+                    margin: 10px;
+                    padding: 10px;
+                }
+                #container {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .inline-list {
+                    margin-top: 3px;
+                    margin-right: 20px;
+                    display: inline-block;
+                    float: left;
+                }
+                #columnPanel{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: transparent;
+                    padding: 7px;
+                    display: inline-flex;
+                    margin-top: 10px;
+                    box-shadow: 0px 4px 6px black;
+                    float: left;
+                    width: 100%;
+                    border-top: 1px solid black;
+
+                }
+
+                .head-div {
+                    width: 100%;
+                    box-shadow: 0px 2px 2px black;
+                    padding: 10px;
+                    padding-left: 20px;
+                    border-top: 1px solid black
+
+                }
+                .list {
+                    padding: 0px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    display: inline-block;
+                }
+
+            }
+            body {
+              background-image: url(backgrounds/black-squares.png);
+              width: 100%;
+            }
+            .Tutorial{
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                background-size: 100%;
+                padding-top: 10px;
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-bottom: 10px;
+            }
+            .col-sm-3 {
+                height: auto;
+                align-content: center;
+                align-items: center;
+                white-space: nowrap;
+                display: flex;
+                margin: auto;
+            }
+            .col-sm-4 {
+                align-content: center;
+                align-items: center;
+                height: 400px;
+                display: block;
+                margin: auto;
+            }
+            .headerDiv {
+                height: 35px;
+                border-radius: 1px;
+                background-color: rgb(51,51,51);
+            }
+            .outerDiv {
+                border-radius: 3px;
+                border-style: solid;
+                border-width: 2px;
+                border-color: rgb(51,51,51);
+                margin-bottom: 20px;
+                background-color: white;
+            }
+            .myPanel {
+                border-style: solid;
+                border-width: 2px;
+                border-color: rgb(19,34,38);
+                border-radius: 3px;
+                margin-top: 10px;
+                margin-bottom: 0px;
+                margin-left: 3px;
+                margin-right: 3px;
+                height: 30px;
+            }
+            p.Panel {
+                border-style: solid;
+                border-width: 2px;
+                border-color: rgb(51,51,51);
+                border-radius: 3px;
+                margin-top: 15px;
+                margin-bottom: 15px;
+                margin-left: 3px;
+                margin-right: 3px;
+                font-size: 20px;
+            }
+            p.heading {
+                vertical-align: middle;
+                font-size: 15px;
+                padding: 5px;
+                color: white;
+            }
+            h.big {
+                font-size: 30px;
+                color: white;
+                margin-left: 10px;
+                clear: both;
+            }
+            .row-head {
+                font-size: 20px;
+            }
+            .container-flex {
+                color: white;
+                white-space: nowrap;
+            }
+            .glyphicon-asterisk {
+                color: rgb(242,161,4);
+            }
+            .glyphicon-ok {
+                color: greenyellow
+            }
+            .glyphicon-thumbs-up {
+                color: rgb(242,161,4);
+            }
+            .display {
+                background-color: green;
+                height: 300px
+            }
+            .filler {
+                height: 465px;
+            }
+            .daddyDisplay {
+                height: 400px;
+            }
+            #button1 {
+                height: 25px;
+                width: 145px;
+                background-color: crimson;
+                color: white;
+                border-radius: 2px;
+                margin-right: 5px;
+                margin-top: 25px;
+            }
+            .red { color: #FF0000; }
+            .col-sm-8 {
+                display:flex;
+                justify-content: center;
+            }
+            #theFrame {
+                margin: 0px auto;
+            }
+            .ul {
+                list-style-type: none;
+                margin: 0px auto;
+                padding: 2px;
+                overflow: hidden;
+                background-color: transparent;
+                border-radius: 3px;
+                display: inline-block;
+            }
+            .li {
+                float: left;
+                margin: 3px;
+                border: 1px solid transparent;
+                box-shadow: 1px 3px 3px black;
+                border-radius: 2px;
+            }
+            .li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 20px 15px;
+                text-decoration: none;
+                text-shadow: 2px 2px 2px black;
+            }
+            .li a:hover:not(.active) {
+                color: greenyellow;
+                text-shadow: 1px 1px 1px black;
+            }
+            .li:hover {
+                box-shadow: 0px 1px 1px black;
+            }
+            .li .active {
+                background-color: transparent;
+                background-image: none;
+                border-radius: 5px;
+                color: dodgerblue;
+            }
+            #activeID {
+                box-shadow: 1px 1px 1px black;
+            }
+            #container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .inline-list {
+                margin-top: 3px;
+                margin: 0px auto;
+            }
+            #columnPanel{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: transparent;
+                padding: 7px;
+                display: inline-block;
+                margin: 0px auto;
+                box-shadow: 0px 3px 6px black;
+                border-radius: 2px;
+                display: inline flex;
+                float: left;
+            }
+            .head-div {
+                width: 100%;
+                box-shadow: 0px 2px 3px black;
+                padding: 10px;
+                padding-left: 20px;
+                border-radius: 2px;
+            }
+            .list {
+                padding: 30px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+            h {
+                text-shadow: 2px 2px 2px black;
+            }
+            li {
+                text-shadow: 2px 2px 2px black;
+            }
+            p {
+                text-shadow: 2px 2px 2px black;
+                margin: auto;
+            }
+            p:hover {
+                text-shadow: 0px 0px 0px black;
+                cursor: pointer;
+            }
+            .ul:hover {
+
+            }
+            #Quicksort{
+
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <ul class='ul'>
+                <li class='li'><a href="">Addis-Tutoring</a></li>
+                <li class='li'><a href="index.html">Code Room</a></li>
+                <li id="activeID" class='li'><a class="active" href="Algorithms.html">Algorithms</a></li>
+                <li class='li'><a href="Videos_Books.html">Videos & Books</a></li>
+                <li class='li'><a href="Chinese.html">Chinese Games</a></li>
+                <li class='li'><a href="chinese-vocab.html">Chinese Vocab</a></li>
+            </ul>
+        </div>
+        <div style="height:30px"></div>
+        <div class="container-flex">
+            <div class="col-sm-3">
+                <div id="columnPanel">
+                    <div class="head-div"><h class="row-head"><span class="glyphicon glyphicon-ok"></span> Data Structures</h></div>
+                    <div class="list">
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Machine Code</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Linked Lists</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Hash Tables</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Arrays</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Trees</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Stacks</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Stacks</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Queues</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Graphs</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Databases</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div id="columnPanel">
+                    <div class="head-div"><h class="row-head"><span class="glyphicon glyphicon-ok"></span> Algorithms</h></div>
+                    <div class="list">
+                        <p class="inline-list" onclick="document.getElementById('Quicksort').src = 'InsertionSort.html'" style="color:dodgerblue;cursor:pointer">
+                            <span class="glyphicon glyphicon-asterisk"></span>Insertion Sort:  <span style="color:greenyellow">(Animate)</span>
+                        </p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Merge Sort</p>
+                        <p class="inline-list" onclick="document.getElementById('Quicksort').src = 'Quicksort.html'" style="color:dodgerblue;cursor:pointer">
+                            <span class="glyphicon glyphicon-asterisk"></span>Quicksort:  <span style="color:greenyellow">(Animate)</span>
+                        </p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Counting Sort</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Bucket Sort</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Heap Sort</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Quantum Sort</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Linear Search</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Binary Search</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Depth First Search</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Breadth First Search</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>String Manipulation</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Iteration</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>List Traversal</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Hashing Functions</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Scheduling</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>File System Traversal</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div id="columnPanel">
+                <div class="head-div"><h class="row-head"><span class="glyphicon glyphicon-ok"></span> Design Patterns</h></div>
+                    <div class="list">
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Modularization</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Factories</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Builders</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Singletons</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Adapters</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Decorators</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Fly-weights</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Observers</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Iterators</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Sate Machines</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Models</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Threading</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Parallel Programming</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div id="columnPanel">
+                <div class="head-div"><h class="row-head"><span class="glyphicon glyphicon-ok"></span> Paradigms</h></div>
+                    <div class="list">
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Imperative</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Functional</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Declarative</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Object-Oriented</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Static Programming</p>
+                        <p class="inline-list"><span class="glyphicon glyphicon-asterisk"></span>Dynamic Programming</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="filler"></div>
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <iframe id ="Quicksort" src="InsertionSort.html" style="width:610px;height:200px;margin:0pxauto" anm-auto-play="true" anm-controls="false" frameborder = "0"></iframe>
+        </div>
+        <div class="col-sm-2"></div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    </body>
+</html>

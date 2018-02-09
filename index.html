@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="https://cdn.firebase.com/libs/firepad/1.4.0/firepad.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <style>
+            html {
+                height: 500px;
+                padding-left: 100px;
+                padding-right: 100px;
+            }
+            body {
+                margin: 0;
+                height: 500px;
+                width: 100%;
+                background-image: url(backgrounds/black-squares.png);
+            }
+            .ul {
+                list-style-type: none;
+                margin: 0px auto;
+                padding: 2px;
+                overflow: hidden;
+                background-color: transparent;
+                border-radius: 3px;
+                display: inline-block;
+            }
+            .li {
+                float: left;
+                background-color: transparent;
+                background-size: contain;
+                margin: 3px;
+                border: 1px solid transparent;
+                box-shadow: 1px 3px 3px black;
+                border-radius: 2px;
+            }
+            .li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 20px 15px;
+                text-decoration: none;
+                text-shadow: 2px 2px 2px black;
+            }
+            .li a:hover:not(.active) {
+                color: greenyellow;
+                text-shadow: 1px 1px 1px black;
+            }
+            .li:hover {
+                box-shadow: 0px 1px 1px black;
+            }
+            .li .active {
+                background-color: transparent;
+                background-image: none;
+                border-radius: 5px;
+                color: dodgerblue;
+            }
+            #container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+            #activeID {
+                box-shadow: 0px 1px 1px black;;
+            }
+            h {
+                text-shadow: 2px 2px 2px black;
+            }
+            li {
+                text-shadow: 2px 2px 2px black;
+            }
+            p {
+                text-shadow: 2px 2px 2px black;
+            }
+            #chatOverFlow {
+                overflow: hidden;
+                height: 500px;
+                width: 30%;
+                box-shadow: 0px 3px 3px black;
+                display: inline-block;
+                float: left;
+                border-radius: 3px
+            }
+            #tutor-container {
+                display: inline-block;
+                padding: 50px;
+                box-shadow: 0px 5px 5px black;
+                border-top: 1px solid black;
+                border-radius: 5px;
+                width: 100%;
+                background-image: url(backgrounds/3.png);
+            }
+                #firepad-container {
+                float: right;
+                display: inline-block;
+                height: 500px;
+                width: 68%;
+                box-shadow: 0px 4px 4px black;
+                border-radius: 3px;
+            }
+            .col-sm-8 {
+                display: inline-block;
+                float: left;
+                width: 70%;
+            }
+            .col-sm-4 {
+                display: inline-block;
+                float: left;
+                width: 30%;
+            }
+            #chat {
+                height: 500px;
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body onload="init()">
+        <div id="container">
+            <ul class='ul'>
+                <li class='li'><a class ="logo" href="">Addis-Tutoring</a></li>
+                <li id="activeID"class='li'><a class="active" href="index.html">Code Room</a></li>
+                <li class='li'><a href="Algorithms.html">Algorithms</a></li>
+                <li class='li'><a href="Videos_Books.html">Videos & Books</a></li>
+                <li class='li'><a href="Chinese.html">Chinese Games</a></li>
+                <li class='li'><a href="chinese-vocab.html">Chinese Vocab</a></li>
+            </ul>
+        </div>
+        <div id="tutor-container">
+            <div id="chatOverFlow">
+                <div id="chat">
+                    <iframe src="chat.php" id="chat" frameborder="0" scrolling="no"></iframe>
+                </div>
+            </div>
+            <div id="code">
+                <div id="firepad-container"></div>
+            </div>
+        </div>
+
+        <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.5/ace.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.5/mode-javascript.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.5/theme-textmate.js"></script>
+        <script src="https://cdn.firebase.com/libs/firepad/1.4.0/firepad.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <script>
+            function init() {
+              var config = {
+                apiKey: "AIzaSyBiv9sgOxWJjEmLVQNp1K7zEKG784xtT-s",
+                authDomain: "tutor-addis.firebaseapp.com",
+                databaseURL: "https://tutor-addis.firebaseio.com",
+                projectId: "tutor-addis",
+                storageBucket: "",
+                messagingSenderId: "12425522956"
+              };
+
+              firebase.initializeApp(config);
+
+              var firepad = myFirepad();
+
+              var editor = ace.edit("firepad-container");
+              editor.setTheme("ace/theme/ambiance");
+              var session = editor.getSession();
+              session.setUseWrapMode(true);
+              session.setUseWorker(false);
+              session.setMode("ace/mode/java");
+
+              var firepad1 = Firepad.fromACE(firepad, editor, {
+                  defaultText: '// Java Editing with Firepad!\nfunction go() {\n  var message = "Hello, world.";\n  console.log(message);\n}'
+              });
+            }
+
+            function myFirepad() {
+                var ref = firebase.database().ref();
+                var hash = window.location.hash.replace(/#/g, '');
+                if (hash) {
+                    ref = ref.child(hash);
+                }
+                else {
+                    ref = ref.push();
+                    window.location = window.location + '#' + ref.key;
+                }
+                if (typeof console !== 'undefined') {
+                    console.log('Firebase data: ', ref.toString());
+                }
+                return ref;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <style>
+            body {
+                width: 100%;
+                background-image: url(backgrounds/tiles.png);
+            }
+            #center{
+                display: flex;
+                margin-bottom: 30px;
+            }
+            .column {
+                width: 33.33%;
+                background-color: aliceblue;
+                height: 700px;
+                overflow-y: scroll;
+                min-width: 430px;
+                padding: 10px;
+            }
+            .vocab {
+                margin: auto;
+            }
+            #vocab-container{
+            }
+            .ul {
+                list-style-type: none;
+                margin: 0px auto;
+                padding: 2px;
+                overflow: hidden;
+                background-color: transparent;
+                border-radius: 3px;
+                display: inline-block;
+            }
+            .li {
+                float: left;
+                margin: 3px;
+                border: 1px solid transparent;
+                box-shadow: 1px 3px 3px black;
+                border-radius: 2px;
+            }
+            .li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 20px 15px;
+                text-decoration: none;
+                text-shadow: 2px 2px 2px black;
+            }
+            .li a:hover:not(.active) {
+                color: greenyellow;
+                text-shadow: 1px 1px 1px black;
+            }
+            .li:hover {
+                box-shadow: 0px 1px 1px black;
+            }
+            .li .active {
+                background-color: transparent;
+                background-image: none;
+                border-radius: 5px;
+                color: dodgerblue;
+            }
+            #activeID {
+                box-shadow: 1px 1px 1px black;
+            }
+            #container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 30px;
+            }
+        </style>
+    </head>
+    <body>
+    <div id="container">
+            <ul class='ul'>
+                <li class='li'><a href="">Addis-Tutoring</a></li>
+                <li class='li'><a href="index.html">Code Room</a></li>
+                <li class='li'><a href="Algorithms.html">Algorithms</a></li>
+                <li class='li'><a href="Videos_Books.html">Videos & Books</a></li>
+                <li class='li'><a href="Chinese.html">Chinese Games</a></li>
+                <li id="activeID" class='li'><a class="active" href="chinese-vocab.html">Chinese Vocab</a></li>
+            </ul>
+        </div>
+    <div id="vocab-container">
+        <p style="margin:auto;font-size:35px">Vocab</p>
+            <div id="center">
+                <div class="column">
+                    <p>Lesson 1</p>
+                    <image src="vocab/1.1-1.PNG"></image>
+                    <image src="vocab/1.1-2.PNG"></image>
+                    <p>Dialogue 2</p>
+                    <image src="vocab/1.2-1.PNG"></image>
+                </div>
+                <div class="column">
+                    <p>Lesson 2</p>
+                    <image src="vocab/2.1-1.PNG"></image>
+                    <image src="vocab/2.1-2.PNG"></image>
+                    <p>Dialogue 2</p>
+                    <image src="vocab/2.2-1.PNG"></image>
+                    <image src="vocab/2.2-2.PNG"></image>
+                </div>
+                <div class="column">
+                    <p>Lesson 3</p>
+                    <image src="vocab/3.1-1.PNG"></image>
+                    <image src="vocab/3.1-2.PNG"></image>
+                    <p>Dialogue 2</p>
+                    <image src="vocab/3.2-1.PNG"></image>
+                </div>
+                <div class="column">
+                    <p>Lesson 4</p>
+                    <image src="vocab/4.1-1.PNG"></image>
+                    <image src="vocab/4.1-2.PNG"></image>
+                    <p>Dialogue 2</p>
+                    <image src="vocab/4.2-1.PNG"></image>
+                    <image src="vocab/4.2-2.PNG"></image>
+                </div>
+                <div class="column">
+                    <p>Lesson 5</p>
+                    <image src="vocab/5.1-1.PNG"></image>
+                    <image src="vocab/5.1-2.PNG"></image>
+                    <p>Dialogue 2</p>
+                    <image src="vocab/5.2-1.PNG"></image>
+                </div>
+                <div class="column">
+                    <p>Lesson 6</p>
+                    <image src="vocab/6.1-1.PNG"></image>
+                    <image src="vocab/6.1-2.PNG"></image>
+                    <p>Dialogue 2</p>
+                    <image src="vocab/6.2-1.PNG"></image>
+                </div>
+                <div class="column">
+                    <p>Lesson 7</p>
+                    <image src="vocab/7.1-1.PNG"></image>
+                    <image src="vocab/7.1-2.PNG"></image>
+                    <p>Dialogue 2</p>
+                    <image src="vocab/7.2-1.PNG"></image>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

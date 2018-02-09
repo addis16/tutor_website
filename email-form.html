@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+<style>
+    html {
+        background-color: transparent;
+        border: 1px solid azure;
+        box-shadow: 0px 4px 4px black;
+    }
+    input[type=submit] {
+        width: 405px;
+        height: 35px;
+        border-radius: 4px;
+        background-color: #4CAF50;
+        box-shadow: 1px 1px 1px black;
+    }
+    input[type=submit]:hover {
+        box-shadow: none;
+    }
+    input[type=text] {
+        height: 20px;
+        width: 400px;
+        border-radius: 1px;
+        box-shadow: 0px 2px 2px black;
+    }
+    #info {
+        height: 100px;
+        margin-bottom: 10px;
+        margin-left: 3px;
+        width: 100%;
+        box-shadow: 0px 3px 3px black;
+    }
+    input[type=submit].value {
+        color: white;
+        font-size: 20px;
+        text-shadow: 1px 1px 1px black;
+    }
+    #email {
+        display: inline-block;
+        width: 45%;
+    }
+    #chat {
+        display: inline-block;
+        height: 280px;;
+        width: 45%;
+        padding: 0px;
+        float: right;
+    }
+</style>
+</head>
+<body>
+    <script>
+
+    </script>
+    <div id="info"><p style="text-shadow:2px 2px 2px black;color: white">412-699-8349<br>j.addis@setonhill.edu<br>j.addis@jacob-addis.com<br></p></div>
+    <div id="email">
+    <form action="mail.php" method="post" id="form">
+        <input type="text" name="email" value="Address"><br>
+        <input type="text" name="Subject" value="Subject"><br>
+        <textarea name="message" id="text-box" rows="10" cols="54" form="form"></textarea><br>
+        <input type="submit" value="Send Email">
+        </form>
+    </div>
+    <iframe id="chat" src="chat.html"></iframe>
+    <button onclick="document.getElementById('chat').contentWindow.location.reload();"></button>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

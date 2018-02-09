@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        body{
+            background-image: url(backgrounds/black-squares.png);
+        }
+        #center{
+            display: flex;
+            align-content: center;
+            vertical-align: middle;
+        }
+        #outer{
+            margin: auto;
+            width: 600px;
+            height: 400px;
+            display: flex;
+            background-color: transparent;
+        }
+        #theFrame{
+            display: inline-flex;
+            margin: auto;
+            height: 85%;
+            width: 80%;
+            background-color: bisque;
+            box-shadow: 0px 3px 3px black;
+        }
+        #next {
+            display: inline-block;
+            float: right;
+            height: 50px;
+            width: 50px;
+            margin-top: 180px;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+        .glyphicon-chevron-right{
+            color: greenyellow;
+            font-size: 47px;
+            text-shadow: 0px 2px 2px black;
+            cursor: pointer;
+        }
+        .ul {
+            list-style-type: none;
+            margin: 0px auto;
+            padding: 2px;
+            overflow: hidden;
+            background-color: transparent;
+            border-radius: 3px;
+            display: inline-block;
+        }
+        .li {
+            float: left;
+            margin: 3px;
+            border: 1px solid transparent;
+            box-shadow: 1px 3px 3px black;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+        .text {
+            color: white;
+            text-align: center;
+            padding: 5px 5px;
+            text-decoration: none;
+            text-shadow: 2px 2px 2px black;
+            cursor: pointer;
+        }
+        .text:hover:not(.active) {
+            color: greenyellow;
+            text-shadow: 1px 1px 1px black;
+        }
+        .li:hover {
+            box-shadow: 0px 1px 1px black;
+        }
+        #container {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+     <div id="container">
+        <ul class='ul'>
+            <li class='li' id="ch1"><p class="text">Ch.1</p></li>
+            <li class='li' id="ch2"><p class="text">Ch.2</p></li>
+            <li class='li' id="ch3"><p class="text">Ch.3</p></li>
+            <li class='li' id="ch4"><p class="text">Ch.4</p></li>
+            <li class='li' id="ch5"><p class="text">Ch.5</p></li>
+        </ul>
+    </div>
+    <div id="center">
+        <div id="outer">
+            <iframe id="theFrame" frameborder="0" scrolling="no" src=""></iframe>
+            <div id="next" onclick="next()">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </div>
+        </div>
+    </div>
+</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        chapter = "flash-cards/";
+        document.getElementById("theFrame").src = "flash-cards/1.html";
+        x = 1;
+        $(document).ready(function(){
+            $("#ch1").click(function(){
+                chapter = "flash-cards/";
+                x = 1;
+                $('#theFrame').attr('src', chapter + x + '.html');
+            });
+            $("#ch2").click(function(){
+                chapter = "flash-cards-ch2/";
+                x = 1;
+                $('#theFrame').attr('src', chapter + x + '.html');
+            });
+            $("#ch3").click(function(){
+                chapter = "flash-cards-ch3/";
+                x = 1;
+                $('#theFrame').attr('src', chapter + x + '.html');
+            });
+            $("#ch4").click(function(){
+                chapter = "flash-cards-ch4/";
+                x = 1;
+                $('#theFrame').attr('src', chapter + x + '.html');
+            });
+            $("#ch5").click(function(){
+                chapter = "flash-cards-ch5/";
+                x = 1;
+                $('#theFrame').attr('src', chapter + x + '.html');
+            });
+        });
+        function next(){
+            x = x + 1;
+            $('#theFrame').animate({width: '0px'}, function(){
+                $('#theFrame').attr('src', chapter + x + '.html');
+                $('#theFrame').animate({height: '80%'}, 'fast');
+                $('#theFrame').animate({width: '80%'});
+            });
+        };
+    </script>
+</html>

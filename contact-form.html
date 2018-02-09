@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    </head>
+        <style>
+
+            #info {
+                height: 100px;
+                box-shadow: 0px 3px 3px black;
+                border-top: 1px solid black;
+                padding-left: 15px;
+            }
+            p {
+                text-shadow: 2px 2px 2px black;
+                color: whitesmoke;
+            }
+            #email {
+                width: 50%;
+                float: left;
+                height: 450px;
+                display: inline-block;
+            }
+            #chat {
+                width: 50%;
+                float: right;
+                height: 450px;
+                margin-top: 20px;
+                display: inline-block;
+            }
+            #container {
+                width: 100%;
+                display: inline-block;
+            }
+        </style>
+    <body ng-app="responsive" ng-controller="responsive" ng-style="body-style">
+
+     <script>
+         var app = angular.module("responsive", []);
+            app.controller("responsive", function($scope, $window){
+                $scope.width = $window.innerWidth;
+                $scope.height = $window.innerHeight;
+
+                $scope.updateHeight = function() {
+                $scope.height = $window.innerHeight;
+                }
+                $scope.updateWidth = function() {
+                    $scope.width = $window.innerWidth;
+                }
+                $scope.adjust = function() {
+                    if ($scope.width < 1000) {
+                        $scope.email = { width: '100%' };
+                        $scope.chat = { width: '100%' };
+                    }
+                    if ($scope.width > 1000) {
+                        $scope.email = { width: '50%' };
+                        $scope.chat = { width: '50%' };
+                    }
+                }
+                $scope.updateHeight();
+                $scope.updateWidth();
+                $scope.adjust();
+
+                $window.onresize = function() {
+                    $scope.adjust();
+                    $scope.updateHeight();
+                    $scope.updateWidth();
+                    $scope.$apply();
+                }
+            });
+     </script>
+        <div id="info">
+            <p>
+                412-699-8349
+                <br>j.addis@setonhill.edu
+                <br>j.addis@jacob-addis.com<br>
+            </p>
+        </div>
+        <iframe id="email" src="email.html" frameborder="0" ng-style="email"></iframe>
+        <iframe id="chat" src="chat.php" frameborder="0" ng-style="chat"></iframe>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+

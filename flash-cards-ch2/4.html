@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        #center{
+            display: flex;
+        }
+        #outer{
+            display: inline-block;
+            margin: auto;
+            height: 93%;
+            width: 95%;
+            margin-top: 15px;
+        }
+        #question{
+            margin: auto;
+            background-color: azure;
+            clear: both;
+        }
+        #answer{
+            display: none;
+            margin: auto;
+            width: 100%;
+            height: 100%;
+            background-color: blueviolet;
+        }
+        p{
+            margin: auto;
+            font-size: 35px;
+            text-shadow: 1px 1px 1px black;
+            clear: both;
+        }
+        #reveal{
+            display: flex;
+            clear: both;
+            width: 100%;
+            height: 220px;
+            border: 1px solid black;
+            margin-top: 10px;
+            box-shadow: 0px 1px 1px black;
+            background-color: cadetblue;
+        }
+        #click{
+            font-size: 15px;
+            color: greenyellow;
+            margin: auto;
+            clear: both;
+            padding-left: 15px;
+            margin-top: 3px;
+        }
+        #pinyin{
+            display: inline-block;
+            margin: auto;
+            color: chocolate;
+        }
+    </style>
+</head>
+<body>
+    <div id="center">
+        <div id="outer">
+            <div style="display:flex">
+                <p>问</p>
+            </div>
+
+            <div id="reveal">
+                <div id="answer">
+                    <div style="display:flex;margin-top:50px">
+                        <p>to ask</p>
+                    </div>
+                     <div style="display:flex;margin-top:60px">
+                        <p id="pinyin">wèn</p>
+                    </div>
+                </div>
+            </div>
+            <div style="display:flex">
+                <p id="click">(Click Box to Reveal Answer)</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $('#reveal').click(function(){
+                $('#answer').fadeIn();
+            })
+        })
+    </script>
+</body>
+
+</html>

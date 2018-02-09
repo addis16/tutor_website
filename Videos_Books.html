@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            html {
+                display: inline-block;
+                padding-left: 60px;
+                padding-right: 60px
+            }
+            body {
+                background-image: url(backgrounds/tiny-black.png);
+                width: 100%;
+            }
+            .Tutorial{
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                background-size: 100%;
+                padding-top: 10px;
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-bottom: 10px;
+                cursor: pointer;
+            }
+            .col-sm-4 {
+                height: auto;
+            }
+            .col-sm-3 {
+                height: auto;
+            }
+            .panel {
+                color: black !important;
+            }
+            .headerDiv {
+                height: 35px;
+                height: 35px;
+                border-radius: 1px;
+                background-image: url(backgrounds/black-squares.png);
+                box-shadow: 1px 1px 1px black;
+            }
+            .outerDiv {
+                border-radius: 3px;
+                border-style: solid;
+                border-width: 1px;
+                border-color: rgb(19,34,38);
+                margin-bottom: 10px;
+                background-color: white;
+                box-shadow: 3px 3px 3px black;
+                cursor: pointer;
+            }
+            .outerDiv:hover {
+                border: 1px solid greenyellow;
+            }
+            .myPanel {
+                border-style: solid;
+                border-width: 1px;
+                border-color: rgb(19,34,38);
+                border-radius: 3px;
+                margin: 0px auto;
+                height: 200px;
+                width: 1500px;
+                background-image: url(Pictures/american.jpg);
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                clear: both;
+                box-shadow: 2px 3px 3px black;
+            }
+            .myPanel2 {
+                border-style: solid;
+                border-width: 1px;
+                border-color: rgb(19,34,38);
+                border-radius: 3px;
+                margin: 0px auto;
+                height: 200px;
+                width: 1500px;
+                background-image: url(Pictures/indian.jpg);
+                background-size: contain;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                box-shadow: 2px 3px 3px black;
+            }
+            p.Panel {
+                border-style: solid;
+                border-width: 2px;
+                border-color: rgb(19,34,38);
+                border-radius: 3px;
+                margin: 0px auto;
+                font-size: 20px;
+                overflow: hidden;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                box-shadow: 2px 3px 3px black;
+            }
+            p.heading {
+                vertical-align: middle;
+                font-size: 17px;
+                padding: 5px;
+                color: white;
+            }
+            .panelText {
+                vertical-align: middle;
+                font-size: 20px;
+                padding: 5px;
+                color: white;
+                float: left;
+                margin: 5px;
+            }
+            #panelText1 {
+                vertical-align: middle;
+                font-size: 20px;
+                margin: 5px;
+                color: greenyellow;
+                float: left;
+            }
+            #panelText2 {
+                vertical-align: middle;
+                font-size: 20px;
+                margin: 5px;
+                color: greenyellow;
+                float: left;
+            }
+            h.big {
+                font-size: 25px;
+                margin: 5px;
+                float: left;
+            }
+            .row {
+                white-space: nowrap;
+            }
+            .container-flex {
+                margin: 20px;
+                margin-bottom: 0px;
+                margin-top: 0px;
+            }
+            img {
+                border-radius: 4px;
+                height: 198px;
+                width: 200px;
+                float: left;
+            }
+            .ul {
+                list-style-type: none;
+                margin: 0px auto;
+                padding: 2px;
+                overflow: hidden;
+                background-color: transparent;
+                border-radius: 3px;
+                display: inline-block;
+            }
+            .li {
+                float: left;
+                background-color: transparent;
+                background-size: contain;
+                margin: 3px;
+                border: 1px solid transparent;
+                box-shadow: 1px 3px 3px black;
+                border-radius: 2px;
+            }
+            .li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 20px 15px;
+                text-decoration: none;
+                text-shadow: 2px 2px 2px black;
+            }
+            .li a:hover:not(.active) {
+                color: greenyellow;
+                text-shadow: 1px 1px 1px black;
+            }
+            .li:hover {
+                box-shadow: 0px 1px 1px black;
+            }
+            .li .active {
+                background-color: transparent;
+                background-image: none;
+                border-radius: 5px;
+                color: dodgerblue;
+            }
+            #container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+            #activeID {
+                box-shadow: 1px 1px 1px black;
+            }
+            h {
+                text-shadow: 2px 2px 2px black;
+            }
+            li {
+                text-shadow: 2px 2px 2px black;
+            }
+            p {
+                text-shadow: 2px 2px 2px black;
+            }
+            #slideDownPanel {
+                height: 35px;
+                border-radius: 4px;
+                background-image: url(backgrounds/very-tiny-black.png);
+                margin-bottom: 10px;
+                cursor: pointer;
+                box-shadow: 0px 3px 3px black;
+            }
+            #slideDownPanel1 {
+                height: 35px;
+                border-radius: 4px;
+                background-image: url(backgrounds/very-tiny-black.png);
+                margin-bottom: 10px;
+                cursor: pointer;
+                box-shadow: 0px 3px 3px black;
+            }
+            #slideDownPanel2 {
+                height: 35px;
+                border-radius: 4px;
+                background-image: url(backgrounds/very-tiny-black.png);
+                margin-bottom: 10px;
+                cursor: pointer;
+                box-shadow: 0px 3px 3px black;
+            }
+            #videoContainer1 {
+                display: none;
+            }
+            #videoContainer2 {
+                display: none;
+            }
+            #up {
+
+            }
+            .bioContainer {
+                margin-top: 50px;
+                color: azure;
+                margin-right: 300px;
+                margin-left: 230px;
+            }
+            #container1 {
+                display: flex;
+                align-content: center;
+                align-items: center;
+                padding-bottom: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <ul class='ul'>
+              <li class='li'><a href="">Addis-Tutoring</a></li>
+              <li class='li'><a href="index.html">Code Room</a></li>
+              <li class='li'><a href="Algorithms.html">Algorithms</a></li>
+              <li id="activeID" class='li'><a class="active" href="Videos_Books.html">Videos & Books</a></li>
+              <li class='li'><a href="Chinese.html">Chinese Games</a></li>
+              <li class='li'><a href="chinese-vocab.html">Chinese Vocab</a></li>
+            </ul>
+        </div>
+        <div id="slideDownPanel"></div>
+        <div id="container1">
+            <div class="myPanel">
+                <img src="Pictures/GayleMcdowell.jpg">
+                <p class="panelText">Gayle Laakmann McDowell: Author of Cracking the Coding Interview.</p>
+                <div class="bioContainer">
+                    <p>Gayle wrote a book that every programmer<br>coming out of college should read IMO, she<br>also makes some great videos on YouTube.</p>
+                </div>
+            </div>
+        </div>
+        <div id="slideDownPanel1">
+            <p id="panelText1">Videos</p><i class="material-icons" style="font-size:25px;color:greenyellow;float:right;margin-right:5px;margin-top:5px;">unfold_more</i>
+        </div>
+        <div id = "videoContainer1"class="container-flex">
+
+            </div>
+            <div id="slideDownPanel"></div>
+        </div>
+            <div id="container1">
+                <div class="myPanel2">
+                    <img src="Pictures/Qian.jpg">
+                    <p class="panelText">Bo Qian: One of my Favorite Youtubers<div class="bioContainer">
+                    <p>Bo Qian makes some great videos on more<br>advanced topics like  the nitty gritty of templates<br>and advanced algorithms.Check out his channel,<br>below are a few of my favorite videos of his.</p>
+                    </div>
+                </div>
+            </div>
+        <div id="slideDownPanel2">
+            <p id="panelText2">Videos</p>
+            <i class="material-icons" style="font-size:25px;color:greenyellow;float:right;margin-right:5px;margin-top:5px;">unfold_more</i>
+        </div>
+        <div id = "videoContainer2" class="container-flex">
+
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                var clicked = false;
+                $('#slideDownPanel1').click(function() {
+                    if (!clicked) {
+                        clicked = true;
+                        $("#videoContainer1").slideDown("slow");
+                    }
+                    else {
+                        clicked = false;
+                        $("#videoContainer1").slideUp("slow");
+                    }
+                });
+            });
+            $(document).ready(function(){
+                var clicked = false;
+                $('#slideDownPanel2').click(function() {
+                    if (!clicked) {
+                        clicked = true;
+                        $("#videoContainer2").slideDown("slow");
+                    }
+                    else {
+                        clicked = false;
+                        $("#videoContainer2").slideUp("slow");
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

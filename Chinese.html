@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <style>
+            body{
+                background-image: url(backgrounds/tiny-black.png);
+            }
+            .ul {
+                list-style-type: none;
+                margin: 0px auto;
+                padding: 2px;
+                overflow: hidden;
+                background-color: transparent;
+                border-radius: 3px;
+                display: inline-block;
+            }
+            .li {
+                float: left;
+                margin: 3px;
+                border: 1px solid transparent;
+                box-shadow: 1px 3px 3px black;
+                border-radius: 2px;
+            }
+            .li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 20px 15px;
+                text-decoration: none;
+                text-shadow: 2px 2px 2px black;
+            }
+            .li a:hover:not(.active) {
+                color: greenyellow;
+                text-shadow: 1px 1px 1px black;
+            }
+            .li:hover {
+                box-shadow: 0px 1px 1px black;
+            }
+            .li .active {
+                background-color: transparent;
+                background-image: none;
+                border-radius: 5px;
+                color: dodgerblue;
+            }
+            #activeID {
+                box-shadow: 1px 1px 1px black;
+            }
+            #container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 30px;
+            }
+            #theFrame{
+                width: 700px;
+                height: 470px;
+                margin: auto;
+                box-shadow: 0px 3px 3px black;
+                background-color: transparent;
+                border-radius: 5px;
+            }
+            #grammarGame {
+                width: 80%;
+                height: 600px;
+                margin: auto;
+                box-shadow: 0px 3px 3px black;
+                background-color: transparent;
+                clear: both;
+                border-radius: 3px;
+            }
+            #center{
+                display: flex;
+                margin-bottom: 30px;
+            }
+            .column {
+                width: 33.33%;
+                background-color: aliceblue;
+                height: 500px;
+                overflow-y: scroll;
+                min-width: 430px;
+                padding: 10px;
+            }
+            .vocab {
+                margin: auto;
+            }
+            #vocab-container{
+            }
+            #game {
+                margin: auto;
+                font-size: 40px;
+                color: cornflowerblue;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <ul class='ul'>
+                <li class='li'><a href="">Addis-Tutoring</a></li>
+                <li class='li'><a href="index.html">Code Room</a></li>
+                <li class='li'><a href="Algorithms.html">Algorithms</a></li>
+                <li class='li'><a href="Videos_Books.html">Videos & Books</a></li>
+                <li id="activeID" class="li"><a class='active' href="Chinese.html">Chinese Games</a></li>
+                <li class='li'><a href="chinese-vocab.html">Chinese Vocab</a></li>
+            </ul>
+        </div>
+        <div id="center">
+            <p id="game">Sentence Structure Drag and Drop</p>
+        </div>
+        <div id="center">
+            <iframe id="grammarGame" src="grammar-game/grammar.php" frameborder="0"></iframe>
+        </div>
+        <div id="center">
+            <p id="game">Flash Cards</p>
+        </div>
+        <div id="center">
+            <iframe id="theFrame" src="flash-cards.html" frameborder="0"></iframe>
+        </div>
+        <div>
+            <p style="float: right; font-size: 15px; color: cornflowerblue; text-shadow: 1px 1px 1px black; clear: both; margin-right: 50px;">All games created by: Jacob Addis</p>
+        </div>
+    </body>
+</html>
